@@ -54,33 +54,37 @@ if (closeMenuButton) {
   closeMenuButton.addEventListener("click", toggleMobileMenu);
 }
 
-// number run
-const statsSection = document.querySelector('#count-members').closest('section');
-let counted = false;
 
-const observer = new IntersectionObserver((entries) => {
-  if (entries[0].isIntersecting && !counted) {
-    counted = true;
+// number run — only on community page
+const countMembersEl = document.querySelector('#count-members');
+if (countMembersEl) {
+  const statsSection = countMembersEl.closest('section');
+  let counted = false;
 
-    new countUp.CountUp('count-members', 120, {
-      duration: 2.5,
-      useEasing: true,
-      easingFn: (t, b, c, d) => {
-        // ease out expo
-        return t === d ? b + c : c * (-Math.pow(2, -10 * t / d) + 1) + b;
-      }
-    }).start();
+  const observer = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting && !counted) {
+      counted = true;
 
-    new countUp.CountUp('count-chapters', 340, {
-      duration: 2.2,
-      startVal: 0,
-    }).start();
+      new countUp.CountUp('count-members', 120, {
+        duration: 2.5,
+        useEasing: true,
+        easingFn: (t, b, c, d) => {
+          // ease out expo
+          return t === d ? b + c : c * (-Math.pow(2, -10 * t / d) + 1) + b;
+        }
+      }).start();
 
-    new countUp.CountUp('count-countries', 58, {
-      duration: 1.8,
-      startVal: 0,
-    }).start();
-  }
-}, { threshold: 0.3 });
+      new countUp.CountUp('count-chapters', 340, {
+        duration: 2.2,
+        startVal: 0,
+      }).start();
 
-observer.observe(statsSection);
+      new countUp.CountUp('count-countries', 58, {
+        duration: 1.8,
+        startVal: 0,
+      }).start();
+    }
+  }, { threshold: 0.3 });
+
+  observer.observe(statsSection);
+}
