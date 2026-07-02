@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trace</title>
+    <link rel="stylesheet" href="output.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="icon" href="assests/2.svg">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/lenis@1.3.4/dist/lenis.min.js"></script>
+
+
+
+</head>
+
+
+<body class="bg-white scroll-smooth overflow-x-hidden scrollbar-none">
+    <main class="block relative min-h-screen overflow-hidden bg-black text-white m-0 sm:m-3 sm:mr-2 sm:rounded-3xl ">
+        <video class="absolute inset-0 h-full w-full object-cover" autoplay muted loop playsinline>
+            <source src="assests\DummyVideo.mp4" type="video/mp4">
+        </video>
+
+        <div class="absolute bg-black/30"></div>
+
+        <div class="relative z-10 flex min-h-screen flex-col">
+            <!-- Primary nav component -->
+            <site-nav></site-nav>
+
+            <section
+                class="relative top-54 flex flex-1 flex-col px-6 pb-8 md:flex-row md:items-end md:px-10 md:pb-10 md:top-auto">
+                <div class="max-w-4xl">
+
+                    <h1 class="mb-6 text-6xl font-semibold sm:text-7xl md:text-[8rem] md:mb-0">
+                        Make.
+                        <br>
+                        Every Run.
+                        <br>
+                        Better.
+                    </h1>
+                </div>
+
+                <div class="group w-full overflow-hidden rounded-2xl bg-black/40 backdrop-blur-md md:ml-auto md:w-80">
+                    <a href="#" class="block flex md:flex-col">
+                        <div class="overflow-hidden p-1">
+                            <img src="assests/landscapedummy.jpg" alt="Latest news preview"
+                                class="h-36 w-full rounded-[14px] object-cover opacity-80 transition-all duration-300 ease-in-out group-hover:scale-[1.02]">
+                        </div>
+
+                        <div class="space-y-3 p-4">
+                            <p class="text-xs font-bold uppercase tracking-[0.2em] text-white/80">Latest News</p>
+                            <h2 class="text-2xl font-black leading-none">2026 Winter Collection</h2>
+                            <p class="text-sm text-white/80">View the latest updates and releases.</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+    <!-- Second nav component -->
+    <site-second-nav></site-second-nav>
+    <div class="w-full lg:h-96 h-auto my-[150px]">
+        <div class="grid gap-fluid-4xl lg:grid-cols-2 md:gap-gutter">
+
+            
+            <div class="flex items-center justify-center lg:justify-center px-4 lg:px-8 order-last lg:order-first mt-12 lg:mt-0"
+                data-aos="fade-up" data-aos-duration="1000">
+                <div class="w-full max-w-sm rounded-xl bg-black/90 backdrop-blur-lg p-4 text-white shadow-xl">
+
+
+                    <div class="mb-3 flex items-center gap-2">
+                        <img src="assests/instagram.png" alt="Instagram Logo" class="h-6 w-6">
+                        <span class="text-sm font-semibold tracking-wide">Alex_h</span>
+                    </div>
+
+
+                    <div class="overflow-hidden">
+                        <img src="assests/Dummy3.jpg" alt="Instagram Post" class="aspect-square w-full object-cover">
+                    </div>
+
+
+                    <div class="mt-3 text-sm ">
+                        <span class="mr-2 font-bold">Alex_h</span>
+                        <span class="text-gray-300">Grounded in craftsmanship. Driven by innovation. Step out and make
+                            every
+                            run better. 🏃‍♂️✨</span>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="flex flex-col justify-center">
+                <p
+                    class="text-black font-bold lg:font-semibold flex px-4 lg:px-0 text-2xl lg:text-4xl lg:pr-36 tracking-tighter">
+                    We design trend-right products, build iconic brands, and shape experiences that inspire people to
+                    RUN
+                    better. Grounded
+                    in craftsmanship and driven by innovation, Trace continues to evolve with purpose.
+                </p>
+
+                <button
+                    class="mt-10 w-fit rounded-xl flex items-center gap-4 font-medium mx-4 lg:mx-0 px-6 py-2 text-black bg-gray-200 cursor-pointer hover:bg-gray-200/70 hover:scale-105 transition-all duration-150 ease-in-out">
+                    Learn More About Us
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                    </svg>
+                </button>
+            </div>
+
+        </div>
+    </div>
+    
+    <site-mobile-menu></site-mobile-menu>
+
+    <!-- top carousel -->
+
+    <div class="flex sm:mx-12 mx-4 flex mt-12">
+
+        <div class="flex items-baseline gap-6 sm:col-span-6 sm:col-start-1">
+            <h2 class="text-4xl sm:text-5xl font-semibold tracking-tight text-black">Featured</h2>
+            <a href="#"
+                class="flex items-center gap-1 text-xl sm:text-2xl font-medium text-gray-500 transition-colors duration-150 hover:bg-gray-200 rounded-lg px-2 py-1">
+                View All
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="w-5 h-5 ml-2" viewBox="0 0 24 24"
+                    stroke-width="2" stroke="currentColor" class="h-3.5 w-3.5">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                </svg>
+            </a>
+
+        </div>
+
+
+
+
+
+    </div>
+
+    <!-- carousel -->
+
+    <section class="w-full select-none pb-16 mt-6" id="carousel-section">
+
+        <div class="swiper overflow-visible py-6" id="editorialSwiper">
+            <div class="swiper-wrapper">
+
+                <!-- Slide 1 -->
+                <div class="swiper-slide">
+                    <div class="flex flex-col cursor-grab">
+                        <div class="w-full aspect-[4/3] overflow-hidden rounded-[6px] shrink-0">
+                            <img src="assests/winter.jpg" alt="Winter Collection"
+                                class="w-full h-full object-cover block">
+                        </div>
+                        <div class="pt-[14px] px-1">
+                            <span
+                                class="block text-[10px] font-bold tracking-[0.18em] uppercase text-[#888] mb-2 border-t border-[#e5e5e5] pt-3">
+                                Trace &bull; New Arrival &bull; Winter 2026
+                            </span>
+                            <p class="text-[15px] leading-[1.55] text-[#111] font-normal m-0">
+                                The Winter 2026 collection arrives with precision-engineered warmth and race-ready
+                                performance. Designed for the athlete who never stops — whatever the weather.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="swiper-slide">
+                    <div class="flex flex-col cursor-grab">
+                        <div class="w-full aspect-[4/3] overflow-hidden rounded-[6px] shrink-0">
+                            <img src="assests/Dummy3.jpg" alt="Performance Runner"
+                                class="w-full h-full object-cover block">
+                        </div>
+                        <div class="pt-[14px] px-1">
+                            <span
+                                class="block text-[10px] font-bold tracking-[0.18em] uppercase text-[#888] mb-2 border-t border-[#e5e5e5] pt-3">
+                                Trace &bull; Bestseller &bull; Runner Series
+                            </span>
+                            <p class="text-[15px] leading-[1.55] text-[#111] font-normal m-0">
+                                The Trace Pro Runner X sets a new standard for daily training. Maximum cushioning
+                                technology meets a featherlight upper — the shoe that redefines what your pace can be.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="swiper-slide">
+                    <div class="flex flex-col cursor-grab">
+                        <div class="w-full aspect-[4/3] overflow-hidden rounded-[6px] shrink-0">
+                            <img src="assests/winter.jpg" alt="Night Runner Elite"
+                                class="w-full h-full object-cover block">
+                        </div>
+                        <div class="pt-[14px] px-1">
+                            <span
+                                class="block text-[10px] font-bold tracking-[0.18em] uppercase text-[#888] mb-2 border-t border-[#e5e5e5] pt-3">
+                                Trace &bull; Limited Edition &bull; Nightwear
+                            </span>
+                            <p class="text-[15px] leading-[1.55] text-[#111] font-normal m-0">
+                                Reflective technology meets street-ready style in this limited-edition silhouette. Only
+                                500 pairs worldwide. Own the night — one stride at a time.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 4 -->
+                <div class="swiper-slide">
+                    <div class="flex flex-col cursor-grab">
+                        <div class="w-full aspect-[4/3] overflow-hidden rounded-[6px] shrink-0">
+                            <img src="assests/Dummy3.jpg" alt="Trace Gold Edition"
+                                class="w-full h-full object-cover block">
+                        </div>
+                        <div class="pt-[14px] px-1">
+                            <span
+                                class="block text-[10px] font-bold tracking-[0.18em] uppercase text-[#888] mb-2 border-t border-[#e5e5e5] pt-3">
+                                Trace &bull; Premium &bull; Gold Edition
+                            </span>
+                            <p class="text-[15px] leading-[1.55] text-[#111] font-normal m-0">
+                                Handcrafted from the finest materials. The Trace Gold Edition represents the pinnacle of
+                                running footwear — a statement of craftsmanship, performance, and prestige.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 5 -->
+                <div class="swiper-slide">
+                    <div class="flex flex-col cursor-grab">
+                        <div class="w-full aspect-[4/3] overflow-hidden rounded-[6px] shrink-0">
+                            <img src="assests/winter.jpg" alt="Trace Terra EcoRun"
+                                class="w-full h-full object-cover block">
+                        </div>
+                        <div class="pt-[14px] px-1">
+                            <span
+                                class="block text-[10px] font-bold tracking-[0.18em] uppercase text-[#888] mb-2 border-t border-[#e5e5e5] pt-3">
+                                Trace &bull; Eco Series &bull; Sustainability
+                            </span>
+                            <p class="text-[15px] leading-[1.55] text-[#111] font-normal m-0">
+                                Built from 80% recycled materials without sacrificing a single gram of performance. The
+                                EcoRun is proof that running further and treading lighter are not opposites.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+    <!-- Creating Your Future section -->
+    <section class="relative w-full mt-16 overflow-hidden rounded-3xl" style="min-height: 92vh;">
+
+        <!-- Background image -->
+        <img src="assests/BG.jpg" alt="BackgroundImage"
+            class="absolute inset-0 w-full h-full object-cover object-center select-none">
+
+        <!-- Dark gradient overlay -->
+        <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/70"></div>
+
+        <!-- Content wrapper — pushes heading to top, CTA to bottom -->
+        <div class="relative z-10 flex flex-col justify-between h-full min-h-[92vh] px-6 pt-14 pb-16 md:px-16 md:pt-20 md:pb-28">
+
+            <!-- Big heading -->
+            <h2 class="text-white font-black leading-[0.9] tracking-tight text-center
+                        text-[clamp(4rem,14vw,11rem)]">
+                Outrun<br>Every<br>Known<br>Limit.
+            </h2>
+
+            <!-- Bottom: subtitle + button -->
+            <div class="flex flex-col items-center gap-6 text-center">
+                <p class="text-white/85 text-sm leading-relaxed max-w-[22rem]">
+                    "Form follows momentum. TRACE technical garments strip away distractions, transforming raw effort into effortless
+                    speed."
+                </p>
+                <a href="#"
+                    class="inline-flex items-center gap-2 bg-white text-black font-semibold text-sm
+                           px-6 py-3 rounded-full shadow-lg
+                           transition-all duration-200 hover:bg-white/90 hover:scale-105 active:scale-95">
+                    Shop Now
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 shrink-0" fill="none"
+                         viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                    </svg>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer component -->
+    <site-footer></site-footer>
+
+
+
+    <!-- Components -->
+    <script src="components/nav.js"></script>
+    <script src="components/footer.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="scirpt.js"></script>
+    <script>
+        const swiper = new Swiper('#editorialSwiper', {
+            slidesPerView: 1.05,
+            spaceBetween: 16,
+            centeredSlides: false,
+            snapToSlideEdge: true,
+            grabCursor: true,
+            parallax: false,
+            slidesOffsetBefore: 16,
+
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 28,
+                    slidesOffsetBefore: 48,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 32,
+                    slidesOffsetBefore: 48,
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>
