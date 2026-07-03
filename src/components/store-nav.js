@@ -26,18 +26,14 @@ class StoreNav extends HTMLElement {
             <a href="index.html" class="shrink-0">
               <img src="assests/black_logo.png" alt="Trace" class="h-16 md:h-16 w-auto">
             </a>
-
-            <ul class="items-center gap-2 text-sm font-semibold md:gap-8 md:text-base hidden md:flex text-black">
+          
+            <ul class="items-center gap-2 text-xs font-semibold md:gap-4 md:text-sm hidden sm:flex text-black">
               <li><a class="block rounded-xl px-2 py-1 transition-all duration-150 ease-in-out hover:bg-black/10" href="about.html">About</a></li>
               <li><a class="block rounded-xl px-2 py-1 transition-all duration-150 ease-in-out hover:bg-black/10" href="brands.html">Brands</a></li>
               <li><a class="block rounded-xl px-2 py-1 transition-all duration-150 ease-in-out hover:bg-black/10" href="community.html">Community</a></li>
-              <li>
-                <button class="block rounded-xl px-2 py-1 transition-all duration-150 ease-in-out hover:bg-black/10 flex items-center cursor-pointer" popovertarget="store-megamenu">
-                  Store
-                  <svg class="w-3.5 h-3.5 ml-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-                </button>
-              </li>
+              <li><a class="block rounded-xl px-2 py-1 transition-all duration-150 ease-in-out hover:bg-black/10" href="store.html">Store</a></li>
             </ul>
+            
           </div>
 
           <!-- Right icons -->
@@ -77,7 +73,7 @@ class StoreNav extends HTMLElement {
         </div>
       </nav>
 
-      <!-- Megamenu popover (daisyUI) -->
+      <!-- Megamenu -->
       <div class="megamenu max-sm:megamenu-vertical megamenu-wide p-2 border border-base-300 bg-base-100 rounded-box" id="store-megamenu" popover>
         <span class="megamenu-active"></span>
 
@@ -88,24 +84,23 @@ class StoreNav extends HTMLElement {
           <div class="flex max-sm:flex-col items-start">
             <ul class="menu w-full md:menu-horizontal">
               <li>
-                <a class="font-bold">Jackets</a>
                 <ul>
-                  <li><a href="#" data-filter="Apparel">Windbreakers</a></li>
-                  <li><a href="#" data-filter="Apparel">Shell Jackets</a></li>
-                  <li><a href="#" data-filter="Apparel">Insulated</a></li>
+                  <li class="menu-title">Tops & Outerwear</li>
+                  <li><a href="#" data-filter="Apparel">T-Shirts & Longsleeves</a></li>
+                  <li><a href="#" data-filter="Apparel">Hoodies & Half-Zippers</a></li>
+                  <li><a href="#" data-filter="Apparel">Jackets & Windbreakers</a></li>
+                  <li><a href="#" data-filter="Apparel">Vests</a></li>
                 </ul>
               </li>
               <li>
-                <a class="font-bold">Base Layers</a>
                 <ul>
-                  <li><a href="#" data-filter="Apparel">Merino Wool</a></li>
-                  <li><a href="#" data-filter="Apparel">Synthetic</a></li>
-                  <li><a href="#" data-filter="Apparel">T-Shirts</a></li>
-                  <li><a href="#" data-filter="Apparel">Tights & Shorts</a></li>
+                  <li class="menu-title">Bottoms</li>
+                  <li><a href="#" data-filter="Apparel">Tights (Short & Long)</a></li>
+                  <li><a href="#" data-filter="Apparel">Tracksuit Pants</a></li>
                 </ul>
               </li>
             </ul>
-            <img src="assests/dummy5.jpg" class="md:max-w-xs max-md:w-auto rounded-lg object-cover aspect-video" alt="Trace Apparel">
+            <img src="https://day-1.com/cdn/shop/files/18_DAY---035_f73a9403-beab-4410-9a09-7a5bbca5dc04.jpg?v=1767546302&width=800" class="md:max-w-xs max-md:w-auto rounded-lg p-1 object-cover aspect-video" alt="Trace Apparel">
           </div>
         </div>
 
@@ -115,27 +110,26 @@ class StoreNav extends HTMLElement {
             <ul class="menu w-full md:menu-horizontal">
               <li>
                 <ul>
-                  <li class="menu-title">Packs & Hydration</li>
-                  <li><a href="#" data-filter="Accessories">Running Vests</a></li>
-                  <li><a href="#" data-filter="Accessories">Hydration Flasks</a></li>
+                  <li class="menu-title">Headwear & Face</li>
+                  <li><a href="#" data-filter="Accessories">Caps & Beanies</a></li>
+                  <li><a href="#" data-filter="Accessories">Masks</a></li>
                 </ul>
               </li>
               <li>
                 <ul>
-                  <li class="menu-title">Headwear & Gloves</li>
-                  <li><a href="#" data-filter="Accessories">Caps</a></li>
-                  <li><a href="#" data-filter="Accessories">Beanies</a></li>
-                  <li><a href="#" data-filter="Accessories">Running Gloves</a></li>
+                  <li class="menu-title">Hands & Feet</li>
+                  <li><a href="#" data-filter="Accessories">Gloves & Wristbands</a></li>
+                  <li><a href="#" data-filter="Accessories">Performance Socks</a></li>
                 </ul>
               </li>
             </ul>
-            <img src="assests/Dummy3.jpg" class="md:max-w-xs max-md:w-auto rounded-lg object-cover aspect-video" alt="Trace Accessories">
+            <img src="https://day-1.com/cdn/shop/files/Mask3.jpg?v=1761937691&width=800" class="md:max-w-xs p-1 max-md:w-auto rounded-lg object-cover aspect-video" alt="Trace Accessories">
           </div>
         </div>
       </div>
 
       <!-- Search overlay modal -->
-      <div class="fixed inset-0 z-[100] bg-black/40 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 flex items-start justify-center pt-24 px-4" id="store-search-overlay">
+      <div class="fixed inset-0 z-[100] bg-black/40 opacity-0 pointer-events-none transition-opacity duration-300 flex items-start justify-center pt-24 px-4" id="store-search-overlay">
         <div class="bg-white w-full max-w-2xl p-8 rounded-2xl transform scale-95 opacity-0 transition-all duration-300 shadow-2xl relative" id="store-search-panel">
           
           <div class="flex items-center border-b-2 border-black pb-2">
@@ -258,7 +252,7 @@ class StoreNav extends HTMLElement {
             <p class="font-semibold truncate">${p.name}</p>
             <p class="text-sm text-base-content/50">${p.category}</p>
           </div>
-          <p class="font-semibold shrink-0">€${p.price},90</p>
+          <p class="font-semibold shrink-0">${p.price} ฿</p>
         </a>`
         )
         .join("");

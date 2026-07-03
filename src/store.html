@@ -15,10 +15,7 @@
     <link rel="stylesheet" href="output.css">
     <link rel="icon" href="assests/2.svg">
 
-    <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"></noscript>
-
-    <!-- Marquee animation for promo bar -->
+    
     <style>
         @keyframes marquee {
             0%   { transform: translateX(0); }
@@ -33,7 +30,7 @@
 
 <body class="bg-base-200 scroll-smooth overflow-x-hidden scrollbar-none">
 
-    <!-- Store-specific navigation (promo bar + navbar + mega menu) -->
+    <!-- navigation -->
     <store-nav></store-nav>
 
     <!-- Breadcrumb -->
@@ -52,9 +49,8 @@
     </div>
 
     <!-- Product grid container -->
-    <section class="px-6 md:px-10 lg:px-16 pb-20 pt-4">
+    <section class="px-6 md:px-10 lg:px-16 pb-20 pt-4 mb-32">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-5 gap-y-10" id="product-grid">
-            <!-- Rendered by JS -->
         </div>
 
         <!-- No results message -->
@@ -73,15 +69,8 @@
     <script src="components/footer.js" defer></script>
 
     <script src="https://unpkg.com/lenis@1.3.4/dist/lenis.min.js" defer></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
-
     <script defer>
     document.addEventListener('DOMContentLoaded', function () {
-
-        // ── AOS ──
-        if (typeof AOS !== 'undefined') {
-            AOS.init({ once: true, offset: 40, duration: 600 });
-        }
 
         // ── Lenis smooth scroll ──
         if (typeof Lenis !== 'undefined') {
@@ -111,15 +100,12 @@
                 const card = document.createElement('div');
                 card.className = 'group';
                 card.id = `product-${p.id}`;
-                card.setAttribute('data-aos', 'fade-up');
-                card.setAttribute('data-aos-delay', String((i % 4) * 80));
-
                 const badgeHtml = p.tag
                     ? `<div class="badge badge-sm absolute top-3 right-3 z-10 font-bold uppercase tracking-wider ${p.tag === 'Bestseller' ? 'badge-neutral' : 'badge-primary'}">${p.tag}</div>`
                     : '';
 
                 card.innerHTML = `
-                    <a href="product.html?id=${p.id}" class="card card-sm bg-base-100 shadow hover:shadow-lg transition-shadow group">
+                    <a href="product.html?id=${p.id}" class="card card-sm bg-base-100 shadow transition-shadow group">
                         <figure class="relative aspect-[4/5] w-full bg-base-200 overflow-hidden">
                             ${badgeHtml}
                             <img src="${p.images[0]}" alt="${p.name}" class="absolute inset-0 w-full h-full object-cover mix-blend-multiply transition-opacity duration-300 group-hover:opacity-0" loading="lazy">
@@ -128,7 +114,7 @@
                         <div class="card-body">
                             <h2 class="card-title flex justify-between text-[15px]">
                                 ${p.name}
-                                <span class="font-normal shrink-0">€${p.price},90</span>
+                                <span class="font-normal shrink-0">${p.price} ฿</span>
                             </h2>
                             <p class="text-sm text-base-content/60 line-clamp-1">${p.description}</p>
                         </div>
@@ -137,9 +123,6 @@
 
                 grid.appendChild(card);
             });
-
-            // Re-init AOS for new elements
-            if (typeof AOS !== 'undefined') AOS.refresh();
         }
 
         function filterByCategory(cat) {
