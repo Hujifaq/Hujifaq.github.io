@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trace | Store en</title>
+    <meta name="description" content="Shop Trace running gear. Trail shoes, performance apparel, and accessories engineered for mountain athletes.">
+
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://unpkg.com">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+
+    <link rel="stylesheet" href="output.css">
+    <link rel="icon" href="assests/2.svg">
+
+    <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"></noscript>
+
+    <!-- Marquee animation for promo bar -->
+    <style>
+        @keyframes marquee {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            animation: marquee 30s linear infinite;
+        }
+
+    </style>
+</head>
+
+<body class="bg-base-200 scroll-smooth overflow-x-hidden scrollbar-none">
+
+    <!-- Store-specific navigation (promo bar + navbar + mega menu) -->
+    <store-nav></store-nav>
+
+    <!-- Breadcrumb -->
+    <div class="px-6 md:px-10 lg:px-16 pt-6 pb-2">
+        <a href="store.html" class="text-sm font-semibold text-base-content/80 underline underline-offset-4 decoration-base-content/30 hover:decoration-base-content transition-colors">All Products</a>
+    </div>
+
+    <!-- Active filter label (shown when filtering) -->
+    <div class="px-6 md:px-10 lg:px-16 pb-4 hidden" id="active-filter-bar">
+        <div class="inline-flex items-center gap-2 bg-base-300 rounded-full px-4 py-1.5 text-sm font-semibold">
+            <span id="active-filter-label"></span>
+            <button class="btn btn-ghost btn-xs btn-circle" id="clear-filter-btn" aria-label="Clear filter">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 18 18 6M6 6l12 12"/></svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Product grid container -->
+    <section class="px-6 md:px-10 lg:px-16 pb-20 pt-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-5 gap-y-10" id="product-grid">
+            <!-- Rendered by JS -->
+        </div>
+
+        <!-- No results message -->
+        <div class="hidden py-24 text-center" id="no-results">
+            <p class="text-2xl font-bold text-base-content/30 mb-2">No products found</p>
+            <p class="text-base-content/50">Try a different search or filter.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <site-footer></site-footer>
+
+    <!-- Scripts -->
+    <script src="products.js"></script>
+    <script src="components/store-nav.js"></script>
+    <script src="components/footer.js" defer></script>
+
+    <script src="https://unpkg.com/lenis@1.3.4/dist/lenis.min.js" defer></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+
+    <script defer>
+    document.addEventListener('DOMContentLoaded', function () {
+
+        // ── AOS ──
+        if (typeof AOS !== 'undefined') {
+            AOS.init({ once: true, offset: 40, duration: 600 });
+        }
+
+        // ── Lenis smooth scroll ──
+        if (typeof Lenis !== 'undefined') {
+            const lenis = new Lenis({ duration: 0.4, smooth: true });
+            (function raf(time) { lenis.raf(time); requestAnimationFrame(raf); })(performance.now());
+        }
+
+        // ── Render products ──
+        const grid = document.getElementById('product-grid');
+        const noResults = document.getElementById('no-results');
+        const filterBar = document.getElementById('active-filter-bar');
+        const filterLabel = document.getElementById('active-filter-label');
+        const clearBtn = document.getElementById('clear-filter-btn');
+
+        let activeCategory = null;
+
+        function renderProducts(list) {
+            grid.innerHTML = '';
+
+            if (list.length === 0) {
+                noResults.classList.remove('hidden');
+                return;
+            }
+            noResults.classList.add('hidden');
+
+            list.forEach((p, i) => {
+                const card = document.createElement('div');
+                card.className = 'group';
+                card.id = `product-${p.id}`;
+                card.setAttribute('data-aos', 'fade-up');
+                card.setAttribute('data-aos-delay', String((i % 4) * 80));
+
+                const badgeHtml = p.tag
+                    ? `<div class="badge badge-sm absolute top-3 right-3 z-10 font-bold uppercase tracking-wider ${p.tag === 'Bestseller' ? 'badge-neutral' : 'badge-primary'}">${p.tag}</div>`
+                    : '';
+
+                card.innerHTML = `
+                    <a href="product.html?id=${p.id}" class="card card-sm bg-base-100 shadow hover:shadow-lg transition-shadow group">
+                        <figure class="relative aspect-[4/5] w-full bg-base-200 overflow-hidden">
+                            ${badgeHtml}
+                            <img src="${p.images[0]}" alt="${p.name}" class="absolute inset-0 w-full h-full object-cover mix-blend-multiply transition-opacity duration-300 group-hover:opacity-0" loading="lazy">
+                            <img src="${p.images[1]}" alt="${p.name} hover" class="absolute inset-0 w-full h-full object-cover mix-blend-multiply transition-opacity duration-300 opacity-0 group-hover:opacity-100" loading="lazy">
+                        </figure>
+                        <div class="card-body">
+                            <h2 class="card-title flex justify-between text-[15px]">
+                                ${p.name}
+                                <span class="font-normal shrink-0">€${p.price},90</span>
+                            </h2>
+                            <p class="text-sm text-base-content/60 line-clamp-1">${p.description}</p>
+                        </div>
+                    </a>
+                `;
+
+                grid.appendChild(card);
+            });
+
+            // Re-init AOS for new elements
+            if (typeof AOS !== 'undefined') AOS.refresh();
+        }
+
+        function filterByCategory(cat) {
+            activeCategory = cat;
+            const list = cat ? PRODUCTS.filter(p => p.category === cat) : PRODUCTS;
+            renderProducts(list);
+
+            if (cat) {
+                filterBar.classList.remove('hidden');
+                filterLabel.textContent = cat;
+            } else {
+                filterBar.classList.add('hidden');
+            }
+        }
+
+        // Initial render
+        renderProducts(PRODUCTS);
+
+        // Clear filter
+        clearBtn.addEventListener('click', () => filterByCategory(null));
+
+        // Mega menu category filter links
+        document.addEventListener('click', (e) => {
+            const filterLink = e.target.closest('[data-filter]');
+            if (filterLink) {
+                e.preventDefault();
+                const cat = filterLink.dataset.filter;
+                filterByCategory(cat);
+                // Close megamenu popover
+                const megamenu = document.getElementById('store-megamenu');
+                if (megamenu) megamenu.hidePopover?.();
+            }
+            // Mobile filter links
+            const mobileFilter = e.target.closest('[data-mobile-filter]');
+            if (mobileFilter) {
+                e.preventDefault();
+                filterByCategory(mobileFilter.dataset.mobileFilter);
+                // Close mobile menu
+                const closeBtn = document.getElementById('store-mobile-close');
+                if (closeBtn) closeBtn.click();
+            }
+        });
+
+    });
+    </script>
+
+</body>
+</html>

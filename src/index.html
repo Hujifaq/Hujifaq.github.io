@@ -13,7 +13,7 @@
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
 
     
-    <link rel="preload" as="video" href="assests/DummyVideo.mp4" type="video/mp4">
+   
 
    
     <link rel="stylesheet" href="output.css">
@@ -29,7 +29,7 @@
 
 <body class="bg-white scroll-smooth overflow-x-hidden scrollbar-none">
     <main class="block relative min-h-screen overflow-hidden bg-black text-white m-0 sm:m-3 sm:mr-2 sm:rounded-3xl ">
-        <video id="hero-video" class="absolute inset-0 h-full w-full object-cover" muted loop playsinline preload="none" poster="assests/BG.jpg">
+        <video class="absolute inset-0 h-full w-full object-cover" muted autoplay loop playsinline >
             <source src="assests/DummyVideo.mp4" type="video/mp4">
         </video>
 
@@ -317,13 +317,6 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js" defer></script>
     <script src="scirpt.js" defer></script>
 
-    <script defer>
-        // Autoplay hero video after page load to avoid blocking render
-        window.addEventListener('load', function () {
-            var v = document.getElementById('hero-video');
-            if (v) { v.play(); }
-        });
-    </script>
 
     <script defer>
         document.addEventListener('DOMContentLoaded', function () {

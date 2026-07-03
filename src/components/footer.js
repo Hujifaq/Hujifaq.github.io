@@ -24,7 +24,7 @@ class SiteFooter extends HTMLElement {
                 <a href="#" class="block pt-4 pb-4">Careers</a>
               </li>
               <li class="border-b border-white/20">
-                <a href="#" class="block pt-4 pb-4">Store</a>
+                <a href="store.html" class="block pt-4 pb-4">Store</a>
               </li>
             </ul>
           </div>

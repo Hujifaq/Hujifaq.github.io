@@ -12,7 +12,7 @@ class SiteNav extends HTMLElement {
           <li><a class="block rounded-xl px-2 py-1 transition-all duration-150 ease-in-out hover:bg-white/20" href="about.html">About</a></li>
           <li><a class="block rounded-xl px-2 py-1 transition-all duration-150 ease-in-out hover:bg-white/20" href="brands.html">Brands</a></li>
           <li><a class="block rounded-xl px-2 py-1 transition-all duration-150 ease-in-out hover:bg-white/20" href="community.html">Community</a></li>
-          <li><a class="block rounded-xl px-2 py-1 transition-all duration-150 ease-in-out hover:bg-white/20" href="#">Store</a></li>
+          <li><a class="block rounded-xl px-2 py-1 transition-all duration-150 ease-in-out hover:bg-white/20" href="store.html">Store</a></li>
         </ul>
         <button class="md:hidden pr-4 cursor-pointer" id="toggle-menu-button">Menu +</button>
       </nav>
@@ -48,7 +48,7 @@ class SiteSecondNav extends HTMLElement {
               <li><a class="block rounded-xl px-2 py-1 transition-all duration-150 ease-in-out hover:bg-white/20" href="about.html">About</a></li>
               <li><a class="block rounded-xl px-2 py-1 transition-all duration-150 ease-in-out hover:bg-white/20" href="brands.html">Brands</a></li>
               <li><a class="block rounded-xl px-2 py-1 transition-all duration-150 ease-in-out hover:bg-white/20" href="community.html">Community</a></li>
-              <li><a class="block rounded-xl px-2 py-1 transition-all duration-150 ease-in-out hover:bg-white/20" href="#">Store</a></li>
+              <li><a class="block rounded-xl px-2 py-1 transition-all duration-150 ease-in-out hover:bg-white/20" href="store.html">Store</a></li>
             </ul>
           </div>
         </div>
@@ -91,7 +91,7 @@ class SiteMobileMenu extends HTMLElement {
               <a href="community.html" class="block py-4 text-xl font-bold tracking-tight hover:text-gray-300">Community</a>
             </li>
             <li class="border-b border-white/20">
-              <a href="#" class="flex items-center justify-between py-4 text-xl font-bold tracking-tight hover:text-gray-300">Store</a>
+              <a href="store.html" class="flex items-center justify-between py-4 text-xl font-bold tracking-tight hover:text-gray-300">Store</a>
             </li>
           </ul>
         </nav>
