@@ -57,10 +57,11 @@ class StoreNav extends HTMLElement {
               </svg>
             </a>
             <!-- Cart -->
-            <a href="#" class="btn btn-ghost btn-circle btn-sm" aria-label="Cart">
+            <a href="checkout.html" class="btn btn-ghost btn-circle btn-sm relative" aria-label="Cart">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007Z"/>
               </svg>
+              <span id="store-cart-badge" class="absolute -top-1 -right-1 bg-black text-white text-[10px] font-bold w-4 h-4 flex items-center justify-center rounded-full hidden">0</span>
             </a>
             <!-- Mobile menu toggle -->
             <button class="btn btn-ghost btn-circle btn-sm sm:hidden" id="store-mobile-toggle" aria-label="Menu">
@@ -193,6 +194,7 @@ class StoreNav extends HTMLElement {
 
     this._initSearch();
     this._initMobileMenu();
+    this._initCartBadge();
   }
 
   // ── Search overlay logic ──────────────────────────────────────────
@@ -279,6 +281,41 @@ class StoreNav extends HTMLElement {
     toggle.addEventListener("click", open);
     close.addEventListener("click", shut);
     overlay.addEventListener("click", (e) => { if (e.target === overlay) shut(); });
+  }
+
+  // ── Cart Badge Logic ──────────────────────────────────────────────
+  _initCartBadge() {
+    const badge = this.querySelector("#store-cart-badge");
+    if (!badge) return;
+
+    const updateBadge = () => {
+      try {
+        const cartData = JSON.parse(localStorage.getItem("cart") || "[]");
+        const totalItems = cartData.reduce((sum, item) => sum + (item.quantity || 1), 0);
+        
+        if (totalItems > 0) {
+          badge.textContent = totalItems;
+          badge.classList.remove("hidden");
+        } else {
+          badge.classList.add("hidden");
+        }
+      } catch (e) {
+        console.error("Failed to parse cart from local storage", e);
+      }
+    };
+
+    // Initial load
+    updateBadge();
+
+    // Listen to custom event for dynamic updates across components
+    window.addEventListener("cart-updated", updateBadge);
+    
+    // Also listen to localStorage changes from other tabs
+    window.addEventListener("storage", (e) => {
+      if (e.key === "cart") {
+        updateBadge();
+      }
+    });
   }
 }
 

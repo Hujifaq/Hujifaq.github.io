@@ -34,12 +34,12 @@
 
 <body class="bg-base-200 scroll-smooth overflow-x-hidden scrollbar-none flex flex-col min-h-screen">
 
-    <!-- Store-specific navigation -->
+    <!-- nav-->
     <store-nav></store-nav>
 
-    <!-- Main Content Area -->
+    
     <main class="flex-1 max-w-[1400px] w-full mb-32 mx-auto px-4 md:px-8 py-8 md:py-12 relative">
-        <!-- Breadcrumb -->
+        
         <div class="mb-6">
             <a href="store.html"
                 class="text-sm font-semibold text-black/80 rounded-xl text-center hover:bg-gray-200 p-2">← Back to
@@ -47,17 +47,17 @@
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 relative">
-            <!-- Left: Images -->
+           
             <div class="flex flex-col gap-4">
                 <div class="bg-base-200 rounded-2xl overflow-hidden aspect-[4/5] relative">
                     <img id="main-image" src="" alt="Product" class="w-full h-full object-cover mix-blend-multiply">
                 </div>
                 <div class="grid grid-cols-4 gap-4" id="thumbnail-gallery">
-                    <!-- Thumbnails go here -->
+                    
                 </div>
             </div>
 
-            <!-- Right: Details -->
+           
             <div class="flex flex-col">
                 <div class="flex items-center gap-2 text-warning mb-2 text-sm font-medium">
                     <span>★★★★★</span>
@@ -82,11 +82,11 @@
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
                         </svg>
-                        Free shipping on orders over 150 ฿
+                        Free shipping on orders over 1000 ฿
                     </div>
                 </div>
 
-                <!-- Color -->
+               
                 <div class="mb-6">
                     <p class="text-sm text-base-content/60 mb-2">Color: <span
                             class="text-base-content font-medium" id="color-label"></span></p>
@@ -94,7 +94,7 @@
                     </div>
                 </div>
 
-                <!-- Size -->
+               
                 <div class="mb-8">
                     <p class="text-sm text-base-content/60 mb-2">Size: <span
                             class="text-base-content font-medium" id="size-label"></span></p>
@@ -102,8 +102,8 @@
                     </div>
                 </div>
 
-                <!-- CTA -->
-                <button class="btn bg-black text-white hover:bg-black/85 w-full mb-4 rounded-xl h-12 text-sm font-bold">
+                
+                <button id="add-to-cart-btn" class="btn bg-black text-white hover:bg-black/85 w-full mb-4 rounded-xl h-12 text-sm font-bold">
                     Add to Basket
                 </button>
 
@@ -137,7 +137,7 @@
                             Shipping & Returns
                         </div>
                         <div class="collapse-content text-sm text-base-content/70 pl-0">
-                            <p>Free shipping over 150 ฿. Free returns within 14 days.</p>
+                            <p>Free shipping over 1000 ฿. Free returns within 14 days.</p>
                         </div>
                     </div>
                 </div>
@@ -163,7 +163,7 @@
             const product = PRODUCTS.find(p => p.id === id);
 
             if (product) {
-                document.title = product.name + " — Trace";
+                document.title = product.name + " | Trace";
                 document.getElementById('product-title').textContent = product.name;
 
                 const priceText = product.price + " ฿";
@@ -265,7 +265,55 @@
                     sizeContainer.appendChild(btn);
                 });
 
+                
+                const addToCartBtn = document.getElementById('add-to-cart-btn');
+                if (addToCartBtn) {
+                    addToCartBtn.addEventListener('click', () => {
+                        
+                        const cartItem = {
+                            id: product.id,
+                            name: product.name,
+                            price: product.price,
+                            color: colorLabel.textContent,
+                            size: selectedSize,
+                            image: mainImage.src,
+                            quantity: 1
+                        };
 
+                       
+                        let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+                        
+                       
+                        const existingIndex = cart.findIndex(item => 
+                            item.id === cartItem.id && 
+                            item.color === cartItem.color && 
+                            item.size === cartItem.size
+                        );
+
+                        if (existingIndex > -1) {
+                          
+                            cart[existingIndex].quantity += 1;
+                        } else {
+                            
+                            cart.push(cartItem);
+                        }
+
+                        
+                        localStorage.setItem('cart', JSON.stringify(cart));
+
+                       
+                        window.dispatchEvent(new Event('cart-updated'));
+
+                       
+                        const originalText = addToCartBtn.textContent;
+                        addToCartBtn.textContent = 'Added to Basket!';
+                        
+                        setTimeout(() => {
+                            addToCartBtn.textContent = originalText;
+                            
+                        }, 2000);
+                    });
+                }
 
             } else {
                 document.getElementById('product-title').textContent = "Product Not Found";

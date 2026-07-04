@@ -25,7 +25,7 @@ const PRODUCTS = [
       },
       {
         "name": "Blue",
-        "hex": "#0b148bff",
+        "hex": "#161d7cff",
         "images": [
           "https://day-1.com/cdn/shop/files/Windbreakerblue1_73bcc2da-0142-4d4c-9aae-bea805a40930.jpg?v=1759068775&width=800",
           "https://day-1.com/cdn/shop/files/Bluecorr2.jpg?v=1760744619&width=800",
@@ -55,20 +55,40 @@ const PRODUCTS = [
     "images": [
       "https://day-1.com/cdn/shop/files/performance-T-shirt-day-one-18.jpg?v=1748737704&width=800",
       "https://day-1.com/cdn/shop/files/performance-T-shirt-day-one---013.jpg?v=1748785834&width=800",
-      "assests/dummy1.jpg",
-      "assests/Dummy6.jpg"
+      "",
+      
     ],
     "colors": [
       {
-        "name": "Black",
-        "hex": "#000000",
+        "name": "White",
+        "hex": "#eeeeeeff",
         "images": [
           "https://day-1.com/cdn/shop/files/performance-T-shirt-day-one-18.jpg?v=1748737704&width=800",
           "https://day-1.com/cdn/shop/files/performance-T-shirt-day-one---013.jpg?v=1748785834&width=800",
-          "assests/dummy1.jpg",
-          "assests/Dummy6.jpg"
+          "https://day-1.com/cdn/shop/files/performance-T-shirt-day-one---008.jpg?v=1748740481&width=800",
+          "https://day-1.com/cdn/shop/files/performance-T-shirt-day-one---005.jpg?v=1748740481&width=800"
         ]
-      }
+      },
+      {
+        "name": "Black",
+        "hex": "#000000ff",
+        "images": [
+          "https://day-1.com/cdn/shop/files/performance-T-shirt-day-one-15.jpg?v=1748785834&width=800",
+          "https://day-1.com/cdn/shop/files/performance-T-shirt-day-one---040.jpg?v=1748785834&width=800",
+          "https://day-1.com/cdn/shop/files/performance-T-shirt-day-one---009.jpg?v=1748785834&width=800",
+          "https://day-1.com/cdn/shop/files/performance-T-shirt-day-one---012.jpg?v=1748785834&width=800"
+        ]
+      },
+      {
+        "name": "Blue",
+        "hex": "#161d7cff",
+        "images": [
+          "https://day-1.com/cdn/shop/files/performance-T-shirt-day-one-12.jpg?v=1748785834&width=800",
+          "https://day-1.com/cdn/shop/files/performance-T-shirt-day-one---034.jpg?v=1748785834&width=800",
+          "https://day-1.com/cdn/shop/files/performance-T-shirt-day-one1---036.jpg?v=1748785834&width=800",
+          "https://day-1.com/cdn/shop/files/performance-T-shirt-day-one1---011.jpg?v=1748785834&width=800"
+        ]
+      },
     ]
   },
   {
@@ -86,13 +106,21 @@ const PRODUCTS = [
     ],
     "colors": [
       {
-        "name": "Black",
-        "hex": "#000000",
+        "name": "White",
+        "hex": "#ffffffff",
         "images": [
           "https://day-1.com/cdn/shop/files/14_Endurance-Shorts-day-one---005.jpg?v=1748740368&width=800",
           "https://day-1.com/cdn/shop/files/14_Endurance-Shorts-day-one---044.jpg?v=1748740368&width=800",
-          "assests/dummy2.jpg",
-          "assests/Dummy3.jpg"
+          
+        ]
+      },
+      {
+        "name": "Black",
+        "hex": "#000000ff",
+        "images": [
+          "https://day-1.com/cdn/shop/files/Performance-Longsleeve-day-one-12.jpg?v=1748786025&width=800",
+          "https://day-1.com/cdn/shop/files/12_Performance-Longsleeve-day-one---017.jpg?v=1748786025&width=800",
+          
         ]
       }
     ]
@@ -107,18 +135,16 @@ const PRODUCTS = [
     "images": [
       "https://day-1.com/cdn/shop/files/Crew-shirt-25-day-one-grey.jpg?v=1770825266&width=800",
       "https://day-1.com/cdn/shop/files/11_DAY---023.jpg?v=1770825266&width=800",
-      "assests/dummy4.jpg",
-      "assests/dummy5.jpg"
+      
     ],
     "colors": [
       {
-        "name": "Black",
-        "hex": "#000000",
+        "name": "Light Grey",
+        "hex": "#e7e7e7ff",
         "images": [
           "https://day-1.com/cdn/shop/files/Crew-shirt-25-day-one-grey.jpg?v=1770825266&width=800",
           "https://day-1.com/cdn/shop/files/11_DAY---023.jpg?v=1770825266&width=800",
-          "assests/dummy4.jpg",
-          "assests/dummy5.jpg"
+          
         ]
       }
     ]
@@ -128,23 +154,22 @@ const PRODUCTS = [
     "name": "Miles over feelings T-Shirt",
     "price": 1590,
     "category": "Apparel",
-    "tag": "",
+    "tag": "LIMITED",
     "description": "Limited Edition – a tribute to Arda’s 600 km ultra-marathon world record in under 96 hours.",
     "images": [
       "https://day-1.com/cdn/shop/files/Damian_back_desert.jpg?v=1778348621&width=1000",
       "https://day-1.com/cdn/shop/files/Damian_vorne.jpg?v=1778348621&width=1000",
-      "assests/Dummy6.jpg",
-      "assests/dummy1.jpg"
+      
     ],
     "colors": [
       {
-        "name": "Black",
-        "hex": "#000000",
+        "name": "Light Brown",
+        "hex": "#a1875eff",
         "images": [
           "https://day-1.com/cdn/shop/files/Damian_back_desert.jpg?v=1778348621&width=1000",
           "https://day-1.com/cdn/shop/files/Damian_vorne.jpg?v=1778348621&width=1000",
-          "assests/Dummy6.jpg",
-          "assests/dummy1.jpg"
+          
+          
         ]
       }
     ]
@@ -159,8 +184,7 @@ const PRODUCTS = [
     "images": [
       "https://day-1.com/cdn/shop/files/29_Compound-Tights-short-day-one.jpg?v=1748740663&width=800",
       "https://day-1.com/cdn/shop/files/29_Compound-Tights-short-day-one---019.jpg?v=1748740663&width=800",
-      "assests/Dummy3.jpg",
-      "assests/dummy5.jpg"
+      
     ],
     "colors": [
       {
@@ -169,8 +193,7 @@ const PRODUCTS = [
         "images": [
           "https://day-1.com/cdn/shop/files/29_Compound-Tights-short-day-one.jpg?v=1748740663&width=800",
           "https://day-1.com/cdn/shop/files/29_Compound-Tights-short-day-one---019.jpg?v=1748740663&width=800",
-          "assests/Dummy3.jpg",
-          "assests/dummy5.jpg"
+         
         ]
       }
     ]
@@ -185,18 +208,16 @@ const PRODUCTS = [
     "images": [
       "https://day-1.com/cdn/shop/files/16_DAY---001.jpg?v=1763734714&width=800",
       "https://day-1.com/cdn/shop/files/16_DAY---018.jpg?v=1763734715&width=800",
-      "assests/Dummy3.jpg",
-      "assests/dummy5.jpg"
+      
     ],
     "colors": [
       {
-        "name": "Black",
-        "hex": "#000000",
+        "name": "White",
+        "hex": "#ffffffff",
         "images": [
           "https://day-1.com/cdn/shop/files/16_DAY---001.jpg?v=1763734714&width=800",
           "https://day-1.com/cdn/shop/files/16_DAY---018.jpg?v=1763734715&width=800",
-          "assests/Dummy3.jpg",
-          "assests/dummy5.jpg"
+          
         ]
       }
     ]
@@ -211,18 +232,16 @@ const PRODUCTS = [
     "images": [
       "https://day-1.com/cdn/shop/files/Grey2v2-front.jpg?v=1770567509&width=800",
       "https://day-1.com/cdn/shop/files/Grey4.jpg?v=1770567509&width=800",
-      "assests/Dummy3.jpg",
-      "assests/dummy5.jpg"
+      
     ],
     "colors": [
       {
-        "name": "Black",
-        "hex": "#000000",
+        "name": "Grey",
+        "hex": "#adadadff",
         "images": [
           "https://day-1.com/cdn/shop/files/Grey2v2-front.jpg?v=1770567509&width=800",
           "https://day-1.com/cdn/shop/files/Grey4.jpg?v=1770567509&width=800",
-          "assests/Dummy3.jpg",
-          "assests/dummy5.jpg"
+         
         ]
       }
     ]
@@ -237,18 +256,16 @@ const PRODUCTS = [
     "images": [
       "https://day-1.com/cdn/shop/files/grey-new-full-2.jpg?v=1770567413&width=800",
       "https://day-1.com/cdn/shop/files/gp1.jpg?v=1770567413&width=800",
-      "assests/Dummy3.jpg",
-      "assests/dummy5.jpg"
+      
     ],
     "colors": [
       {
-        "name": "Black",
-        "hex": "#000000",
+        "name": "Grey",
+        "hex": "#adadadff",
         "images": [
           "https://day-1.com/cdn/shop/files/grey-new-full-2.jpg?v=1770567413&width=800",
           "https://day-1.com/cdn/shop/files/gp1.jpg?v=1770567413&width=800",
-          "assests/Dummy3.jpg",
-          "assests/dummy5.jpg"
+          
         ]
       }
     ]
@@ -263,8 +280,7 @@ const PRODUCTS = [
     "images": [
       "https://day-1.com/cdn/shop/files/Frame35.jpg?v=1748736447&width=800",
       "https://day-1.com/cdn/shop/files/20_DAY1---014.jpg?v=1748736447&width=800",
-      "assests/Dummy3.jpg",
-      "assests/dummy5.jpg"
+      
     ],
     "colors": [
       {
@@ -273,8 +289,7 @@ const PRODUCTS = [
         "images": [
           "https://day-1.com/cdn/shop/files/Frame35.jpg?v=1748736447&width=800",
           "https://day-1.com/cdn/shop/files/20_DAY1---014.jpg?v=1748736447&width=800",
-          "assests/Dummy3.jpg",
-          "assests/dummy5.jpg"
+          
         ]
       }
     ]
@@ -289,8 +304,7 @@ const PRODUCTS = [
     "images": [
       "https://day-1.com/cdn/shop/files/Legacy-hoodie-b-1.jpg?v=1767546208&width=800",
       "https://day-1.com/cdn/shop/files/18_DAY---035.jpg?v=1767547268&width=800",
-      "assests/Dummy3.jpg",
-      "assests/dummy5.jpg"
+      
     ],
     "colors": [
       {
@@ -299,8 +313,7 @@ const PRODUCTS = [
         "images": [
           "https://day-1.com/cdn/shop/files/Legacy-hoodie-b-1.jpg?v=1767546208&width=800",
           "https://day-1.com/cdn/shop/files/18_DAY---035.jpg?v=1767547268&width=800",
-          "assests/Dummy3.jpg",
-          "assests/dummy5.jpg"
+          
         ]
       }
     ]
@@ -315,18 +328,16 @@ const PRODUCTS = [
     "images": [
       "https://day-1.com/cdn/shop/files/BLNVestcorr2.jpg?v=1759069060&width=800",
       "https://day-1.com/cdn/shop/files/BLNVESTcorr1.jpg?v=1759069060&width=800",
-      "assests/Dummy3.jpg",
-      "assests/dummy5.jpg"
+     
     ],
     "colors": [
       {
-        "name": "Black",
-        "hex": "#000000",
+        "name": "Blue",
+        "hex": "#26215aff",
         "images": [
           "https://day-1.com/cdn/shop/files/BLNVestcorr2.jpg?v=1759069060&width=800",
           "https://day-1.com/cdn/shop/files/BLNVESTcorr1.jpg?v=1759069060&width=800",
-          "assests/Dummy3.jpg",
-          "assests/dummy5.jpg"
+          
         ]
       }
     ]
@@ -341,18 +352,16 @@ const PRODUCTS = [
     "images": [
       "https://day-1.com/cdn/shop/files/BLN_WHITE1.jpg?v=1759069060&width=800",
       "https://day-1.com/cdn/shop/files/BLNwhite2jpg.jpg?v=1759069060&width=800",
-      "assests/Dummy3.jpg",
-      "assests/dummy5.jpg"
+      
     ],
     "colors": [
       {
-        "name": "Black",
-        "hex": "#000000",
+        "name": "White",
+        "hex": "#eaebf5ff",
         "images": [
           "https://day-1.com/cdn/shop/files/BLN_WHITE1.jpg?v=1759069060&width=800",
           "https://day-1.com/cdn/shop/files/BLNwhite2jpg.jpg?v=1759069060&width=800",
-          "assests/Dummy3.jpg",
-          "assests/dummy5.jpg"
+          
         ]
       }
     ]
@@ -394,7 +403,7 @@ const PRODUCTS = [
       "https://day-1.com/cdn/shop/files/Beanie5.jpg?v=1761937575&width=800",
       "https://day-1.com/cdn/shop/files/Beanie1.jpg?v=1761937603&width=800",
       "https://day-1.com/cdn/shop/files/Beanie4.jpg?v=1761937603&width=800",
-      "assests/dummy1.jpg"
+      
     ],
     "colors": [
       {
@@ -404,7 +413,7 @@ const PRODUCTS = [
           "https://day-1.com/cdn/shop/files/Beanie5.jpg?v=1761937575&width=800",
           "https://day-1.com/cdn/shop/files/Beanie1.jpg?v=1761937603&width=800",
           "https://day-1.com/cdn/shop/files/Beanie4.jpg?v=1761937603&width=800",
-          "assests/dummy1.jpg"
+          
         ]
       }
     ]
@@ -419,8 +428,7 @@ const PRODUCTS = [
     "images": [
       "https://day-1.com/cdn/shop/files/Mask2.jpg?v=1761937691&width=800",
       "https://day-1.com/cdn/shop/files/Mask3.jpg?v=1761937691&width=800",
-      "assests/Dummy6.jpg",
-      "assests/Dummy3.jpg"
+      
     ],
     "colors": [
       {
@@ -429,8 +437,7 @@ const PRODUCTS = [
         "images": [
           "https://day-1.com/cdn/shop/files/Mask2.jpg?v=1761937691&width=800",
           "https://day-1.com/cdn/shop/files/Mask3.jpg?v=1761937691&width=800",
-          "assests/Dummy6.jpg",
-          "assests/Dummy3.jpg"
+         
         ]
       }
     ]
@@ -445,8 +452,7 @@ const PRODUCTS = [
     "images": [
       "https://day-1.com/cdn/shop/files/gloves-preview-day-one-new.jpg?v=1762006765&width=800",
       "https://day-1.com/cdn/shop/files/Gloves1.jpg?v=1762006765&width=800",
-      "assests/dummy2.jpg",
-      "assests/Dummy3.jpg"
+     
     ],
     "colors": [
       {
@@ -455,8 +461,7 @@ const PRODUCTS = [
         "images": [
           "https://day-1.com/cdn/shop/files/gloves-preview-day-one-new.jpg?v=1762006765&width=800",
           "https://day-1.com/cdn/shop/files/Gloves1.jpg?v=1762006765&width=800",
-          "assests/dummy2.jpg",
-          "assests/Dummy3.jpg"
+          
         ]
       }
     ]
@@ -502,8 +507,8 @@ const PRODUCTS = [
     ],
     "colors": [
       {
-        "name": "Black",
-        "hex": "#000000",
+        "name": "White",
+        "hex": "#ffffffff",
         "images": [
           "https://day-1.com/cdn/shop/files/365-w-1.jpg?v=1760835401&width=800",
           "https://day-1.com/cdn/shop/files/365-w-2.jpg?v=1760835401&width=800",
