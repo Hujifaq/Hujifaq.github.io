@@ -38,7 +38,7 @@
         <a href="store.html" class="text-sm font-semibold text-base-content/80 underline underline-offset-4 decoration-base-content/30 hover:decoration-base-content transition-colors">All Products</a>
     </div>
 
-    <!-- Active filter label (shown when filtering) -->
+    <!-- Active filter  -->
     <div class="px-6 md:px-10 lg:px-16 pb-4 hidden" id="active-filter-bar">
         <div class="inline-flex items-center gap-2 bg-base-300 rounded-full px-4 py-1.5 text-sm font-semibold">
             <span id="active-filter-label"></span>
@@ -72,13 +72,13 @@
     <script defer>
     document.addEventListener('DOMContentLoaded', function () {
 
-        // ── Lenis smooth scroll ──
+        
         if (typeof Lenis !== 'undefined') {
             const lenis = new Lenis({ duration: 0.4, smooth: true });
             (function raf(time) { lenis.raf(time); requestAnimationFrame(raf); })(performance.now());
         }
 
-        // ── Render products ──
+        
         const grid = document.getElementById('product-grid');
         const noResults = document.getElementById('no-results');
         const filterBar = document.getElementById('active-filter-bar');
@@ -138,29 +138,29 @@
             }
         }
 
-        // Initial render
+        
         renderProducts(PRODUCTS);
 
-        // Clear filter
+        
         clearBtn.addEventListener('click', () => filterByCategory(null));
 
-        // Mega menu category filter links
+        
         document.addEventListener('click', (e) => {
             const filterLink = e.target.closest('[data-filter]');
             if (filterLink) {
                 e.preventDefault();
                 const cat = filterLink.dataset.filter;
                 filterByCategory(cat);
-                // Close megamenu popover
+                
                 const megamenu = document.getElementById('store-megamenu');
                 if (megamenu) megamenu.hidePopover?.();
             }
-            // Mobile filter links
+            
             const mobileFilter = e.target.closest('[data-mobile-filter]');
             if (mobileFilter) {
                 e.preventDefault();
                 filterByCategory(mobileFilter.dataset.mobileFilter);
-                // Close mobile menu
+                
                 const closeBtn = document.getElementById('store-mobile-close');
                 if (closeBtn) closeBtn.click();
             }

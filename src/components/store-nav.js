@@ -1,6 +1,4 @@
-// ─── Store-only Navigation ──────────────────────────────────────────
-// Includes: promotion marquee bar, white navbar with black logo,
-// daisyUI megamenu for "Shop", search overlay, account & cart icons.
+
 
 class StoreNav extends HTMLElement {
   connectedCallback() {
@@ -197,7 +195,7 @@ class StoreNav extends HTMLElement {
     this._initCartBadge();
   }
 
-  // ── Search overlay logic ──────────────────────────────────────────
+  
   _initSearch() {
     const toggle = this.querySelector("#store-search-toggle");
     const overlay = this.querySelector("#store-search-overlay");
@@ -304,13 +302,13 @@ class StoreNav extends HTMLElement {
       }
     };
 
-    // Initial load
+    
     updateBadge();
 
-    // Listen to custom event for dynamic updates across components
+    
     window.addEventListener("cart-updated", updateBadge);
     
-    // Also listen to localStorage changes from other tabs
+    
     window.addEventListener("storage", (e) => {
       if (e.key === "cart") {
         updateBadge();

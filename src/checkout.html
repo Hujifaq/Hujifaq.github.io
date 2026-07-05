@@ -53,7 +53,31 @@
                 <div class="bg-white p-6 md:p-8 rounded-2xl border border-base-300">
                     <h2 class="text-2xl font-bold mb-6 text-black">Payment Method</h2>
                     
-                    <form class="space-y-4">
+                    <div class="flex flex-col gap-4 mb-6">
+                        <!-- Credit Card Option -->
+                        <label class="flex items-center justify-between p-4 border border-black rounded-xl cursor-pointer bg-base-100 transition-all payment-option" id="label-cc">
+                            <div class="flex items-center gap-3">
+                                <input type="radio" name="payment_method" value="credit_card" class="radio radio-sm" checked>
+                                <span class="font-medium text-black">Credit Card</span>
+                            </div>
+                            <div class="flex gap-2">
+                                <svg class="w-8 h-6 text-black" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4C2.89 4 2.01 4.89 2.01 6L2 18C2 19.11 2.89 20 4 20H20C21.11 20 22 19.11 22 18V6C22 4.89 21.11 4 20 4ZM20 18H4V12H20V18ZM20 8H4V6H20V8Z"/></svg>
+                            </div>
+                        </label>
+                        
+                        <!-- PayPal Option -->
+                        <label class="flex items-center justify-between p-4 border border-base-300 rounded-xl cursor-pointer hover:border-black transition-all payment-option" id="label-paypal">
+                            <div class="flex items-center gap-3">
+                                <input type="radio" name="payment_method" value="paypal" class="radio radio-sm">
+                                <span class="font-medium text-black">PayPal</span>
+                            </div>
+                            <div class="flex gap-2">
+                                <img src="assests/paypal.png" alt="PayPal" class="h-6">
+                            </div>
+                        </label>
+                    </div>
+
+                    <form class="space-y-4" id="form-cc">
                        
                         <div>
                             <label class="block text-sm font-medium text-black mb-1">Name on card</label>
@@ -85,6 +109,11 @@
                             </div>
                         </div>
                     </form>
+
+                    <div id="form-paypal" class="hidden text-center py-8 bg-base-100 rounded-xl border border-base-300">
+                        <img src="assests/paypal.png" alt="PayPal" class="h-12 mx-auto mb-4">
+                        <p class="text-black font-medium mb-2">You will be redirected to PayPal to complete your purchase securely.</p>
+                    </div>
                 </div>
             </div>
 
@@ -257,11 +286,37 @@
             
             renderCart();
 
-            
             window.addEventListener('storage', (e) => {
                 if (e.key === 'cart') {
                     renderCart();
                 }
+            });
+
+            // Payment method toggle logic
+            const paymentRadios = document.querySelectorAll('input[name="payment_method"]');
+            const formCc = document.getElementById('form-cc');
+            const formPaypal = document.getElementById('form-paypal');
+            const labelCc = document.getElementById('label-cc');
+            const labelPaypal = document.getElementById('label-paypal');
+
+            paymentRadios.forEach(radio => {
+                radio.addEventListener('change', (e) => {
+                    if (e.target.value === 'credit_card') {
+                        formCc.classList.remove('hidden');
+                        formPaypal.classList.add('hidden');
+                        labelCc.classList.add('border-black');
+                        labelCc.classList.remove('border-base-300');
+                        labelPaypal.classList.remove('border-black');
+                        labelPaypal.classList.add('border-base-300');
+                    } else if (e.target.value === 'paypal') {
+                        formCc.classList.add('hidden');
+                        formPaypal.classList.remove('hidden');
+                        labelPaypal.classList.add('border-black');
+                        labelPaypal.classList.remove('border-base-300');
+                        labelCc.classList.remove('border-black');
+                        labelCc.classList.add('border-base-300');
+                    }
+                });
             });
         });
     </script>

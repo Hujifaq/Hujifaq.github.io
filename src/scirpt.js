@@ -55,7 +55,7 @@ if (closeMenuButton) {
 }
 
 
-// number run — only on community page
+
 const countMembersEl = document.querySelector('#count-members');
 if (countMembersEl) {
   const statsSection = countMembersEl.closest('section');
@@ -69,7 +69,7 @@ if (countMembersEl) {
         duration: 2.5,
         useEasing: true,
         easingFn: (t, b, c, d) => {
-          // ease out expo
+         
           return t === d ? b + c : c * (-Math.pow(2, -10 * t / d) + 1) + b;
         }
       }).start();
