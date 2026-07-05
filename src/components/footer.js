@@ -18,10 +18,10 @@ class SiteFooter extends HTMLElement {
                 <a href="about.html" class="block pt-4 pb-4">About</a>
               </li>
               <li class="border-b border-white/20">
-                <a href="#" class="block pt-4 pb-4">Brands</a>
+                <a href="brands.html" class="block pt-4 pb-4">Brands</a>
               </li>
               <li class="border-b border-white/20">
-                <a href="#" class="block pt-4 pb-4">Careers</a>
+                <a href="community.html" class="block pt-4 pb-4">Community</a>
               </li>
               <li class="border-b border-white/20">
                 <a href="store.html" class="block pt-4 pb-4">Store</a>
